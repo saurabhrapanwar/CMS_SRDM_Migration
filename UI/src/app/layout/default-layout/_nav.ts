@@ -11,6 +11,344 @@ export const navItems: INavData[] = [
     }
   },
   {
+    name: 'Master',
+    url: '/base',
+    iconComponent: { name: 'cil-pencil' },
+    children: [
+      {
+        name: 'Class Wise Fee Heads',
+        url: '/master/class_wise_fee_heads',
+        icon: 'nav-icon-bullet'
+      },
+      {
+        name: 'Exp. Fee Heads',
+        url: '/master/FeeHeadMaster',
+        icon: 'nav-icon-bullet'
+      },
+      {
+        name: 'Create Staff ',
+        url: '/base/CreateStaff ',
+        icon: 'nav-icon-bullet'
+      },
+      {
+        name: 'Class Master',
+        url: '/base/ClassMaster',
+        icon: 'nav-icon-bullet'
+      },
+      {
+        name: 'Branch Master',
+        url: '/base/BranchMaster',
+        icon: 'nav-icon-bullet'
+      }
+    ]
+  },
+  {
+    name: 'Junior',
+    url: '/base',
+    iconComponent: { name: 'cil-cursor' },
+    children: [
+      {
+        name: ' Junior College Admission',
+        url: '',
+        icon: 'nav-icon-bullet'
+      },
+      {
+        name: 'Junior Admission Register',
+        url: '',
+        icon: 'nav-icon-bullet'
+      },
+      {
+        name: 'Junior Admission Register Update ',
+        url: '',
+        icon: 'nav-icon-bullet'
+      },
+      {
+        name: 'Junior Student Promote',
+        url: '',
+        icon: 'nav-icon-bullet'
+      },
+      {
+        name: 'Junior College TC',
+        url: '',
+        icon: 'nav-icon-bullet'
+      },
+      {
+        name: 'Junior College Old TC',
+        url: '',
+        icon: 'nav-icon-bullet'
+      },
+      {
+        name: 'Junior General Receipt',
+        url: '',
+        icon: 'nav-icon-bullet'
+      },
+      {
+        name: 'Junior College Manual Examination',
+        url: '',
+        icon: 'nav-icon-bullet'
+      },
+      {
+        name: 'Junior College Examination Fees ',
+        url: '',
+        icon: 'nav-icon-bullet'
+      },
+      {
+        name: 'Junior Recipt cancellation ',
+        url: '',
+        icon: 'nav-icon-bullet'
+      },
+      {
+        name: 'Junior Recipt cancellation report ',
+        url: '',
+        icon: 'nav-icon-bullet'
+      },
+      {
+        name: 'Junior Receipt Reprint ',
+        url: '',
+        icon: 'nav-icon-bullet'
+      },
+      {
+        name: 'Junior Admission Cancel',
+        url: '',
+        icon: 'nav-icon-bullet'
+      }
+
+    ]
+  },
+  {
+    name: 'Senior',
+    url: '/base',
+    iconComponent: { name: 'cil-cursor' },
+    children: [
+      {
+        name: 'Senior Prospectus ',
+        url: '',
+        icon: 'nav-icon-bullet'
+      },
+      {
+        name: 'Senior College Admission ',
+        url: '',
+        icon: 'nav-icon-bullet'
+      },
+      {
+        name: ' Senior College Admission',
+        url: '',
+        icon: 'nav-icon-bullet'
+      },
+      {
+        name: 'Senior Admission Register',
+        url: '',
+        icon: 'nav-icon-bullet'
+      },
+      {
+        name: 'Senior Admission Register Update ',
+        url: '',
+        icon: 'nav-icon-bullet'
+      },
+      {
+        name: 'Senior Student Promote',
+        url: '',
+        icon: 'nav-icon-bullet'
+      },
+      {
+        name: 'Senior Admission register Cancel',
+        url: '',
+        icon: 'nav-icon-bullet'
+      },
+      {
+        name: 'Senior College Manual Examination',
+        url: '',
+        icon: 'nav-icon-bullet'
+      },
+      
+      {
+        name: 'Senior College TC',
+        url: '',
+        icon: 'nav-icon-bullet'
+      },
+      {
+        name: 'Senior College Old TC',
+        url: '',
+        icon: 'nav-icon-bullet'
+      },
+      {
+        name: 'Senior General Receipt',
+        url: '',
+        icon: 'nav-icon-bullet'
+      },
+      {
+        name: 'Senior College Examination Fee',
+        url: '',
+        icon: 'nav-icon-bullet'
+      },
+      {
+        name: 'Senior Recipt cancellation ',
+        url: '',
+        icon: 'nav-icon-bullet'
+      },
+      {
+        name: 'Senior Recipt cancellation report ',
+        url: '',
+        icon: 'nav-icon-bullet'
+      },
+      {
+        name: 'Senior Receipt Reprint ',
+        url: '',
+        icon: 'nav-icon-bullet'
+      },
+      {
+        name: ' Senior Student Migrate TC',
+        url: '',
+        icon: 'nav-icon-bullet'
+      },
+      {
+        name: ' Senior Old Student Migrate TC',
+        url: '',
+        icon: 'nav-icon-bullet'
+      }
+
+    ]
+  },
+  {
+    name: 'PG',
+    url: '/PG',
+    iconComponent: { name: 'cil-cursor' },
+    children: [
+      {
+        name: ' PG College Admission ',
+        url: '',
+        icon: 'nav-icon-bullet'
+      },
+      {
+        name: 'PG Admission Register',
+        url: '',
+        icon: 'nav-icon-bullet'
+      },
+      {
+        name: 'PG Admission Register Update',
+        url: '',
+        icon: 'nav-icon-bullet'
+      },
+      {
+        name: 'PG General Receipt',
+        url: '',
+        icon: 'nav-icon-bullet'
+      }
+    ]
+  },
+  {
+    name: 'Fees Report',
+    url: '/feesReport',
+    iconComponent: { name: 'cil-cursor' },
+    children: [
+      {
+        name: 'DCR Report ',
+        url: '',
+        icon: 'nav-icon-bullet'
+      },
+      {
+        name: 'Fee Head Wise Report ',
+        url: '',
+        icon: 'nav-icon-bullet'
+      },
+      {
+        name: ' Student Due Report ',
+        url: '',
+        icon: 'nav-icon-bullet'
+      },
+      {
+        name: ' Senior Admission Report ',
+        url: '',
+        icon: 'nav-icon-bullet'
+      },
+      {
+        name: 'Junior Admission Report ',
+        url: '',
+        icon: 'nav-icon-bullet'
+      }
+    ]
+  },
+  {
+    name: 'Student Reports',
+    url: '/feesReport',
+    iconComponent: { name: 'cil-cursor' },
+    children: [
+      {
+        name: 'Admission Registration Report  ',
+        url: '',
+        icon: 'nav-icon-bullet'
+      },
+      {
+        name: ' Bonafide Print  ',
+        url: '',
+        icon: 'nav-icon-bullet'
+      },
+      {
+        name: ' MIS Report For Jr & Sr',
+        url: '',
+        icon: 'nav-icon-bullet'
+      },
+      {
+        name: 'Register General Report ',
+        url: '',
+        icon: 'nav-icon-bullet'
+      },
+      {
+        name: ' Subject Wise Report  ',
+        url: '',
+        icon: 'nav-icon-bullet'
+      },
+      {
+        name: 'TC Issued And Admission Cancelled Report ',
+        url: '',
+        icon: 'nav-icon-bullet'
+      }
+    ]
+  },
+  {
+    name: 'Installment',
+    url: '',
+    iconComponent: { name: 'cil-cursor' }
+  },
+  {
+    name: 'Detail reports',
+    url: '',
+    iconComponent: { name: 'cil-cursor' },
+    children: [
+      {
+        name: 'Senior Detail Report',
+        url: '',
+        icon: 'nav-icon-bullet'
+      },
+      {
+        name: 'Junior Detail Report',
+        url: '',
+        icon: 'nav-icon-bullet'
+      }
+    ]
+  },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  {
     title: true,
     name: 'Theme'
   },
