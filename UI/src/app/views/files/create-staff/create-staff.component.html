@@ -1,0 +1,293 @@
+<!-- Staff Creation Form -->
+<div class="row">
+  <div class="col-12">
+    <div class="card mb-4">
+      <div class="card-header">
+        <strong>{{ staffForm.id ? 'Update Staff' : 'Create Staff' }}</strong>
+      </div>
+      <div class="card-body">
+        <form #customStylesForm="ngForm" (ngSubmit)="onSubmit1(customStylesForm)" 
+              [ngClass]="{'was-validated': customStylesValidated}" class="row g-3 needs-validation" novalidate>
+
+          <!-- Employee Name Field -->
+          <div class="col-md-4">
+            <label for="employee_name" class="form-label">Employee Name</label>
+            <input
+              class="form-control"
+              id="employee_name"
+              name="employeeName"
+              [(ngModel)]="staffForm.employeeName"
+              required
+              type="text"
+              pattern="^[A-Za-z\s]+$"
+              placeholder="Enter letters only"
+            />
+            <div class="invalid-feedback">Only letters are allowed (spaces included).</div>
+          </div>
+
+          <!-- Designation Select -->
+          <div class="col-md-4">
+            <label for="designation" class="form-label">Designation</label>
+            <select
+              class="form-control"
+              id="designation"
+              name="designation"
+              [(ngModel)]="staffForm.designation"
+              required
+            >
+              <option value="" selected disabled>Select Designation</option>
+              <option>Principal</option>
+              <option>Phy. Dir.</option>
+              <option>Librarian</option>
+              <option>Asso. Prof.</option>
+              <option>Asst. Prof.</option>
+              <option>OS</option>
+              <option>Head Clerk</option>
+              <option>Sr. Clerk</option>
+              <option>Jr. Clerk</option>
+              <option>Lib. Clerk</option>
+              <option>Lib. Atten.</option>
+              <option>Peon</option>
+              <option>Non-Teaching Staff</option>
+              <option>Lecturer</option>
+            </select>
+            <div class="invalid-feedback">Please select a designation.</div>
+          </div>
+
+          <!-- Professor Type Select -->
+          <div class="col-md-4">
+            <label for="professor_type" class="form-label">Professor Type</label>
+            <select
+              class="form-control"
+              id="professor_type"
+              name="professorType"
+              [(ngModel)]="staffForm.professorType"
+              required
+            >
+              <option value="" selected disabled>Select Professor</option>
+              <option>Jr Professor</option>
+              <option>Sr Professor</option>
+              <option>CHB Lecturer</option>
+            </select>
+            <div class="invalid-feedback">Please select a professor type.</div>
+          </div>
+
+          <!-- Subject Select -->
+          <div class="col-md-4">
+            <label for="subject" class="form-label">Subject</label>
+            <select
+              class="form-control"
+              id="subject"
+              name="subject"
+              [(ngModel)]="staffForm.subject"
+              required
+            >
+              <option value="" selected disabled>Select Subject</option>
+              <option>NA</option>
+              <option>English</option>
+              <option>Hindi</option>
+              <option>Marathi</option>
+              <option>Botany</option>
+              <option>Physics</option>
+              <option>Mathematics</option>
+              <option>Chemistry</option>
+              <option>History</option>
+              <option>Comm.</option>
+              <option>Com.</option>
+              <option>Sociology</option>
+              <option>Comp.Sci</option>
+              <option>Economic</option>
+              <option>Pol.Science</option>
+              <option>Lib.science</option>
+              <option>Zoology</option>
+            </select>
+            <div class="invalid-feedback">Please select a subject.</div>
+          </div>
+
+          <!-- Pay Field -->
+          <div class="col-md-4">
+            <label for="pay" class="form-label">Pay</label>
+            <input
+              class="form-control"
+              id="pay"
+              name="pay"
+              [(ngModel)]="staffForm.pay"
+              required
+              type="number"
+              min="0"
+              placeholder="Enter amount"
+            />
+            <div class="invalid-feedback">Please enter a valid pay amount.</div>
+          </div>
+
+          <!-- Salary Pay Band Field -->
+          <div class="col-md-4">
+            <label for="salary_pay_band" class="form-label">Salary Pay Band</label>
+            <input
+              class="form-control"
+              id="salary_pay_band"
+              name="salaryPayBand"
+              [(ngModel)]="staffForm.salaryPayBand"
+              required
+              type="text"
+              placeholder="Enter salary band"
+            />
+            <div class="invalid-feedback">Salary pay band is required.</div>
+          </div>
+
+          <!-- GP, DA, HRA Fields -->
+          <div class="col-md-4">
+            <label for="gp" class="form-label">GP</label>
+            <input
+              class="form-control"
+              id="gp"
+              name="gp"
+              [(ngModel)]="staffForm.gp"
+              required
+              type="number"
+              min="0"
+              placeholder="Enter amount"
+            />
+            <div class="invalid-feedback">Please enter a valid GP amount.</div>
+          </div>
+          <div class="col-md-4">
+            <label for="da" class="form-label">DA (%)</label>
+            <input
+              class="form-control"
+              id="da"
+              name="da"
+              [(ngModel)]="staffForm.da"
+              required
+              type="number"
+              min="0"
+              max="100"
+              placeholder="Enter percentage"
+            />
+            <div class="invalid-feedback">Please enter a valid DA percentage (0-100).</div>
+          </div>
+          <div class="col-md-4">
+            <label for="hra" class="form-label">HRA (%)</label>
+            <input
+              class="form-control"
+              id="hra"
+              name="hra"
+              [(ngModel)]="staffForm.hra"
+              required
+              type="number"
+              min="0"
+              max="100"
+              placeholder="Enter percentage"
+            />
+            <div class="invalid-feedback">Please enter a valid HRA percentage (0-100).</div>
+          </div>
+
+          <!-- Other Fields -->
+          <div class="col-md-4">
+            <label for="va" class="form-label">VA</label>
+            <input
+              class="form-control"
+              id="va"
+              name="va"
+              [(ngModel)]="staffForm.va"
+              required
+              type="number"
+              min="0"
+              placeholder="Enter amount"
+            />
+            <div class="invalid-feedback">Please enter a valid VA amount.</div>
+          </div>
+          <div class="col-md-4">
+            <label for="ta" class="form-label">TA</label>
+            <input
+              class="form-control"
+              id="ta"
+              name="ta"
+              [(ngModel)]="staffForm.ta"
+              required
+              type="number"
+              min="0"
+              placeholder="Enter amount"
+            />
+            <div class="invalid-feedback">Please enter a valid TA amount.</div>
+          </div>
+          <div class="col-md-4">
+            <label for="other_allowance" class="form-label">Other Allowance</label>
+            <input
+              class="form-control"
+              id="other_allowance"
+              name="otherAllowance"
+              [(ngModel)]="staffForm.otherAllowance"
+              required
+              type="number"
+              min="0"
+              placeholder="Enter amount"
+            />
+            <div class="invalid-feedback">Please enter a valid allowance amount.</div>
+          </div>
+
+          <!-- Submit and Reset Buttons -->
+          <div class="col-12">
+            <button type="submit" class="btn btn-primary me-1">{{ staffForm.id ? 'Update' : 'Submit' }}</button>
+            <button (click)="onReset1()" type="reset" class="btn btn-secondary">Reset</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Staff List Table -->
+<div class="col-12 mt-4">
+  <div class="card mb-4">
+    <div class="card-header">
+      <strong>Staff List</strong>
+    </div>
+    <div class="card-body">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Employee Name</th>
+            <th>Designation</th>
+            <th>Professor Type</th>
+            <th>Subject</th>
+            <th>Pay</th>
+            <th>Salary Pay Band</th>
+            <th>GP</th>
+            <th>DA</th>
+            <th>HRA</th>
+            <th>VA</th>
+            <th>TA</th>
+            <th>Other Allowance</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Show "No data available" if feeHeads is empty -->
+          <tr *ngIf="staffList.length === 0">
+            <td colspan="13" class="text-center">No data available</td>
+          </tr>
+
+          <tr *ngFor="let staff of staffList; let i = index">
+            <td>{{ staff.employeeName }}</td>
+            <td>{{ staff.designation }}</td>
+            <td>{{ staff.professorType }}</td>
+            <td>{{ staff.subject }}</td>
+            <td>{{ staff.pay }}</td>
+            <td>{{ staff.salaryPayBand }}</td>
+            <td>{{ staff.gp }}</td>
+            <td>{{ staff.da }}</td>
+            <td>{{ staff.hra }}</td>
+            <td>{{ staff.va }}</td>
+            <td>{{ staff.ta }}</td>
+            <td>{{ staff.otherAllowance }}</td>
+            <td>
+              <button (click)="editStaff(i)" class="btn btn-primary">Edit</button>
+              <button (click)="deleteStaff(i)" class="btn btn-danger">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

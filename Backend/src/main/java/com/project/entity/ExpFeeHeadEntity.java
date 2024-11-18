@@ -3,53 +3,53 @@ package com.example.demo.entity;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "tbl_Exp_fee_heads")
+@Table(name = "tbl_Exp_feeHeads")
 public class ExpFeeHeadEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
-    private String fee_head;
-    private String amount;
+    private String feeHead;
+    private Integer amount;
     private String date;
     private String time;
-    private String by_user;
+    private String byUser;
 
     // Constructors, Getters, Setters, and ToString methods
     public ExpFeeHeadEntity() {}
 
-    public ExpFeeHeadEntity(int id, String fee_head, String amount, String date, String time, String by_user) {
+    public ExpFeeHeadEntity(Long id, String feeHead, Integer amount, String date, String time, String byUser) {
         this.id = id;
-        this.fee_head = fee_head;
+        this.feeHead = feeHead;
         this.amount = amount;
         this.date = date;
         this.time = time;
-        this.by_user = by_user;
+        this.byUser = byUser;
     }
     
 
-    public int getId() {
+    public Long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
-	public String getfee_head() {
-		return fee_head;
+	public String getfeeHead() {
+		return feeHead;
 	}
 
-	public void setfee_head(String fee_head) {
-		this.fee_head = fee_head;
+	public void setfeeHead(String feeHead) {
+		this.feeHead = feeHead;
 	}
 
-	public String getAmount() {
+	public Integer getAmount() {
 		return amount;
 	}
 
-	public void setAmount(String amount) {
+	public void setAmount(Integer amount) {
 		this.amount = amount;
 	}
 
@@ -69,18 +69,18 @@ public class ExpFeeHeadEntity {
 		this.time = time;
 	}
 
-	public String getBy_user() {
-		return by_user;
+	public String getbyUser() {
+		return byUser;
 	}
 
-	public void setBy_user(String by_user) {
-		this.by_user = by_user;
+	public void setbyUser(String byUser) {
+		this.byUser = byUser;
 	}
 
 	@Override
 	public String toString() {
-		return "ExpFeeHeadEntity [id=" + id + ", fee_head=" + fee_head + ", amount=" + amount + ", date=" + date
-				+ ", time=" + time + ", by_user=" + by_user + "]";
+		return "ExpFeeHeadEntity [id=" + id + ", feeHead=" + feeHead + ", amount=" + amount + ", date=" + date
+				+ ", time=" + time + ", byUser=" + byUser + "]";
 	}
 
 	

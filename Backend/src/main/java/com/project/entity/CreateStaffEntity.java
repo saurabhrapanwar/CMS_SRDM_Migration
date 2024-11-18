@@ -8,63 +8,64 @@ public class CreateStaffEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
-    private String employee_name;
+    private String employeeName;
     private String designation;
-    private String professor_type;
+    private String professorType;
     private String subject;
     private String pay;
-    private String salary_pay_band;
+    private String salaryPayBand;
     private String gp;
     private String da;
     private String hra;
     private String va;
     private String ta;
-    private String other_allowance;
+    private String otherAllowance;
     private String emp_date;
     private String emp_time;
     private String emp_by_user;
+    
+	public CreateStaffEntity() {
+		super();
+	}
 
-    // Constructors, Getters, Setters, and ToString methods
-    public CreateStaffEntity() {}
+	public CreateStaffEntity(Long id, String employeeName, String designation, String professorType, String subject,
+			String pay, String salaryPayBand, String gp, String da, String hra, String va, String ta,
+			String otherAllowance, String emp_date, String emp_time, String emp_by_user) {
+		super();
+		this.id = id;
+		this.employeeName = employeeName;
+		this.designation = designation;
+		this.professorType = professorType;
+		this.subject = subject;
+		this.pay = pay;
+		this.salaryPayBand = salaryPayBand;
+		this.gp = gp;
+		this.da = da;
+		this.hra = hra;
+		this.va = va;
+		this.ta = ta;
+		this.otherAllowance = otherAllowance;
+		this.emp_date = emp_date;
+		this.emp_time = emp_time;
+		this.emp_by_user = emp_by_user;
+	}
 
-    public CreateStaffEntity(int id, String employee_name, String designation, String professor_type, 
-                              String subject, String pay, String salary_pay_band, String gp, String da, 
-                              String hra, String va, String ta, String other_allowance, String emp_date, 
-                              String emp_time, String emp_by_user) {
-        this.id = id;
-        this.employee_name = employee_name;
-        this.designation = designation;
-        this.professor_type = professor_type;
-        this.subject = subject;
-        this.pay = pay;
-        this.salary_pay_band = salary_pay_band;
-        this.gp = gp;
-        this.da = da;
-        this.hra = hra;
-        this.va = va;
-        this.ta = ta;
-        this.other_allowance = other_allowance;
-        this.emp_date = emp_date;
-        this.emp_time = emp_time;
-        this.emp_by_user = emp_by_user;
-    }
-
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
-	public String getemployee_name() {
-		return employee_name;
+	public String getEmployeeName() {
+		return employeeName;
 	}
 
-	public void setemployee_name(String employee_name) {
-		this.employee_name = employee_name;
+	public void setEmployeeName(String employeeName) {
+		this.employeeName = employeeName;
 	}
 
 	public String getDesignation() {
@@ -75,12 +76,12 @@ public class CreateStaffEntity {
 		this.designation = designation;
 	}
 
-	public String getprofessor_type() {
-		return professor_type;
+	public String getProfessorType() {
+		return professorType;
 	}
 
-	public void setprofessor_type(String professor_type) {
-		this.professor_type = professor_type;
+	public void setProfessorType(String professorType) {
+		this.professorType = professorType;
 	}
 
 	public String getSubject() {
@@ -99,12 +100,12 @@ public class CreateStaffEntity {
 		this.pay = pay;
 	}
 
-	public String getsalary_pay_band() {
-		return salary_pay_band;
+	public String getSalaryPayBand() {
+		return salaryPayBand;
 	}
 
-	public void setsalary_pay_band(String salary_pay_band) {
-		this.salary_pay_band = salary_pay_band;
+	public void setSalaryPayBand(String salaryPayBand) {
+		this.salaryPayBand = salaryPayBand;
 	}
 
 	public String getGp() {
@@ -147,12 +148,12 @@ public class CreateStaffEntity {
 		this.ta = ta;
 	}
 
-	public String getother_allowance() {
-		return other_allowance;
+	public String getOtherAllowance() {
+		return otherAllowance;
 	}
 
-	public void setother_allowance(String other_allowance) {
-		this.other_allowance = other_allowance;
+	public void setOtherAllowance(String otherAllowance) {
+		this.otherAllowance = otherAllowance;
 	}
 
 	public String getEmp_date() {
@@ -171,22 +172,21 @@ public class CreateStaffEntity {
 		this.emp_time = emp_time;
 	}
 
-	public String getemp_by_user() {
+	public String getEmp_by_user() {
 		return emp_by_user;
 	}
 
-	public void setemp_by_user(String emp_by_user) {
+	public void setEmp_by_user(String emp_by_user) {
 		this.emp_by_user = emp_by_user;
 	}
 
 	@Override
 	public String toString() {
-		return "CreateStaffEntity [id=" + id + ", employee_name=" + employee_name + ", designation=" + designation
-				+ ", professor_type=" + professor_type + ", subject=" + subject + ", pay=" + pay + ", salary_pay_band="
-				+ salary_pay_band + ", gp=" + gp + ", da=" + da + ", hra=" + hra + ", va=" + va + ", ta=" + ta
-				+ ", other_allowance=" + other_allowance + ", emp_date=" + emp_date + ", emp_time=" + emp_time
+		return "CreateStaffEntity [id=" + id + ", employeeName=" + employeeName + ", designation=" + designation
+				+ ", professorType=" + professorType + ", subject=" + subject + ", pay=" + pay + ", salaryPayBand="
+				+ salaryPayBand + ", gp=" + gp + ", da=" + da + ", hra=" + hra + ", va=" + va + ", ta=" + ta
+				+ ", otherAllowance=" + otherAllowance + ", emp_date=" + emp_date + ", emp_time=" + emp_time
 				+ ", emp_by_user=" + emp_by_user + "]";
 	}
-
     
 }
