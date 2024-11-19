@@ -26,6 +26,7 @@ body {
   }
 
   .nav-link {
+    white-space: normal !important;
     display: flex;
     align-items: center;
     min-height: calc(4rem + 1px); // stylelint-disable-line function-disallowed-list
