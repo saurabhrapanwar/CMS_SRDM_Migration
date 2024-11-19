@@ -12,7 +12,7 @@ import { iconSubset } from './icons/icon-subset';
   template: '<router-outlet></router-outlet>' // Removed `standalone` and `imports`
 })
 export class AppComponent implements OnInit {
-  title = 'CoreUI Angular Admin Template';
+  title = 'SETTribe - CMS';
 
   readonly #destroyRef: DestroyRef = inject(DestroyRef);
   readonly #activatedRoute: ActivatedRoute = inject(ActivatedRoute);
