@@ -1,0 +1,88 @@
+<div class="row">
+  <div class="col-12">
+    <c-card class="mb-4">
+      <c-card-header>
+        <strong>Exp Fee Head</strong>
+      </c-card-header>
+      <c-card-body>
+        <form #customStylesForm="ngForm" (ngSubmit)="onSubmit11(customStylesForm)"
+          [ngClass]="{'was-validated': customStylesValidated}" cForm class="row g-3 needs-validation">
+          
+          <div class="col-md-4">
+            <label for="validationCustom01" class="form-label">Fee Head</label>
+            <input
+              class="form-control"
+              id="validationCustom01"
+              name="fee_head"
+              [(ngModel)]="formValue.fee_head"
+              required
+              type="text"
+              pattern="[A-Za-z\s]+"
+            />
+            <div class="invalid-feedback">Fee Head must contain only letters and spaces.</div>
+          </div>
+          
+          <div class="col-md-4">
+            <label for="validationCustom02" class="form-label">Amount</label>
+            <input
+              class="form-control"
+              id="validationCustom02"
+              name="amount"
+              [(ngModel)]="formValue.amount"
+              required
+              type="number"
+              min="1"
+            />
+            <div class="invalid-feedback">Amount must be a positive number.</div>
+          </div>
+          
+          <div class="col-12">
+            <button *ngIf="!isEditMode" type="submit" class="btn btn-primary me-1">
+              Submit
+            </button>
+            <button *ngIf="isEditMode" type="submit" class="btn btn-primary me-1">
+              Update
+            </button>
+            <button type="button" (click)="onReset1()" class="btn btn-secondary">
+              Reset
+            </button>
+          </div>
+        </form>
+      </c-card-body>
+    </c-card>
+  </div>
+</div>
+
+<div class="col-12 mt-4">
+  <c-card class="mb-4">
+    <c-card-header>
+      <strong>Fee Head List</strong>
+    </c-card-header>
+    <c-card-body>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Fee Head</th>
+            <th>Amount</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Show "No data available" if feeHeads is empty -->
+          <tr *ngIf="feeHeads.length === 0">
+            <td colspan="3" class="text-center">No data available</td>
+          </tr>
+          <!-- Loop through feeHeads when there is data -->
+          <tr *ngFor="let feeHead of feeHeads; let i = index">
+            <td>{{ feeHead.feeHead }}</td>
+            <td>{{ feeHead.amount }}</td>
+            <td>
+              <button (click)="editFeeHead(i)" class="btn btn-primary me-1">Edit</button>
+              <button (click)="deleteFeeHead(i)" class="btn btn-danger">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </c-card-body>
+  </c-card>
+</div>

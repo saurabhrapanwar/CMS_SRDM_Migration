@@ -31,9 +31,13 @@ export const routes: Routes = [
         loadChildren: () => import('./views/buttons/routes').then((m) => m.routes)
       },
       {
+        path: 'files',
+        loadChildren: () => import('./views/files/routes').then((m) => m.routes)
+      },
+      {
         path: 'forms',
         loadChildren: () => import('./views/forms/routes').then((m) => m.routes)
-      },
+      }, 
       {
         path: 'icons',
         loadChildren: () => import('./views/icons/routes').then((m) => m.routes)
@@ -84,5 +88,6 @@ export const routes: Routes = [
       title: 'Register Page'
     }
   },
-  { path: '**', redirectTo: 'dashboard' }
+  { path: '**', redirectTo: 'dashboard' } 
 ];
+ 

@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "@angular/core": "^18.2.11",
+    "@angular/localize": "^18.2.11",
+    "sweetalert2": "^11.14.5"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^18.2.11",
+    "@angular/cli": "^18.2.11",
+    "@types/jasmine": "^5.1.4"
+  }
+}

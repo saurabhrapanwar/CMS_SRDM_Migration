@@ -5,6 +5,9 @@ import com.example.demo.repository.CreateStaffRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -14,50 +17,74 @@ public class CreateStaffService {
     @Autowired
     private CreateStaffRepository createStaffRepository;
 
+    // Creating a new staff and setting defaults
     public CreateStaffEntity createStaff(CreateStaffEntity createStaffEntity) {
+        // Set static fields if not already set
+        createStaffEntity.setEmp_by_user("YASH");  // Default user name
+        createStaffEntity.setEmp_date(LocalDate.now().toString());  // Current date
+        createStaffEntity.setEmp_time(LocalTime.now().toString());  // Current time
+
         return createStaffRepository.save(createStaffEntity);
     }
-    
+
     public CreateStaffEntity save(CreateStaffEntity createStaffEntity) {
+        // Set static fields if not already set
+        createStaffEntity.setEmp_by_user("YASH");  // Default user name
+        createStaffEntity.setEmp_date(LocalDate.now().toString());  // Current date
+        createStaffEntity.setEmp_time(LocalTime.now().toString());  // Current time
+
         return createStaffRepository.save(createStaffEntity);
     }
 
     public List<CreateStaffEntity> getAll() {
-        return createStaffRepository.findAll();
+        Iterable<CreateStaffEntity> iterable = createStaffRepository.findAll();
+        List<CreateStaffEntity> staffList = new ArrayList<>();
+        
+        // Convert Iterable to List
+        iterable.forEach(staffList::add);
+        
+        return staffList;
     }
 
-    public CreateStaffEntity getById(int id) {
+
+    public CreateStaffEntity getById(Long id) {
         return createStaffRepository.findById(id).orElse(null);
     }
 
-    public void deleteById(int id) {
+    public void deleteById(Long id) {
         createStaffRepository.deleteById(id);
     }
 
-    public CreateStaffEntity updateStaff(int id, CreateStaffEntity updatedStaff) {
+    public CreateStaffEntity updateStaff(Long id, CreateStaffEntity updatedStaff) {
         Optional<CreateStaffEntity> existingStaffOpt = createStaffRepository.findById(id);
         
         if (existingStaffOpt.isPresent()) {
             CreateStaffEntity existingStaff = existingStaffOpt.get();
-            // Using exact field names from CreateStaffEntity
-            existingStaff.setemployee_name(updatedStaff.getemployee_name());
+            
+            // Set new values for the fields
+            existingStaff.setEmployeeName(updatedStaff.getEmployeeName());
             existingStaff.setDesignation(updatedStaff.getDesignation());
-            existingStaff.setprofessor_type(updatedStaff.getprofessor_type());
+            existingStaff.setProfessorType(updatedStaff.getProfessorType());
             existingStaff.setSubject(updatedStaff.getSubject());
             existingStaff.setPay(updatedStaff.getPay());
-            existingStaff.setsalary_pay_band(updatedStaff.getsalary_pay_band());
+            existingStaff.setSalaryPayBand(updatedStaff.getSalaryPayBand());
             existingStaff.setGp(updatedStaff.getGp());
             existingStaff.setDa(updatedStaff.getDa());
             existingStaff.setHra(updatedStaff.getHra());
             existingStaff.setVa(updatedStaff.getVa());
             existingStaff.setTa(updatedStaff.getTa());
-            existingStaff.setother_allowance(updatedStaff.getother_allowance());
-            existingStaff.setEmp_date(updatedStaff.getEmp_date());
-            existingStaff.setEmp_time(updatedStaff.getEmp_time());
-            existingStaff.setemp_by_user(updatedStaff.getemp_by_user());
+            existingStaff.setOtherAllowance(updatedStaff.getOtherAllowance());
+            
+            // Set default values for the static fields
+            existingStaff.setEmp_by_user("YASH");  // Default user name
+            existingStaff.setEmp_date(LocalDate.now().toString());  // Current date
+            existingStaff.setEmp_time(LocalTime.now().toString());  // Current time
+            
             return createStaffRepository.save(existingStaff);
         } else {
             throw new RuntimeException("Staff with ID " + id + " not found.");
         }
     }
+
+
 }
